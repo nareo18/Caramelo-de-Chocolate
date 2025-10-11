@@ -1,0 +1,93 @@
+
+
+
+/* 🎨 Fondo general del sitio */
+body {
+    background-image: url("fondo.png");  /* Imagen de fondo */
+    background-repeat: repeat;           /* Se repite tipo mosaico */
+    margin: 0;                           /* Elimina márgenes del navegador */
+    font-family: Arial, sans-serif;
+    position: relative; /* 👈 ahora el body es el punto de referencia */
+}
+
+
+/* Imagen mosaico rectangular centrada */
+.mosaico {
+  position: absolute;
+  top: -90%;
+  left: -40%;
+  transform: translate(50%, 50%); /* centra la imagen */
+  width: 90%;   /* deja ver los bordes */
+  height: 400%;  /* deja espacio alrededor */
+  background-image: url('mosaico_rectangular.png'); /* tu imagen de mosaico */
+  background-repeat: repeat;  /* se repite en patrón */
+  background-size: calc(100% / 3) auto; 
+  z-index: -1;                /* sobre el fondo */
+  opacity: 0.95;              /* opcional: un toque de transparencia */
+  border-radius: 20px;        /* opcional: esquinas suaves */
+}
+
+
+/* 🟫 Barra superior decorativa */
+.site-bar {
+    background-image: url("barra.png");  /* Imagen para la barra */
+    background-repeat: repeat-x;         /* Solo se repite horizontalmente */
+    background-size: contain;            /* Ajusta para encajar */
+    height: 60px;                        /* Altura de la barra */
+}
+
+/* 🍫 Contenedor que agrupa los botones */
+.botones {
+    display: flex;                       /* Muestra los botones en una línea horizontal */
+    justify-content: flex-end;           /* 🔸 Alinea los botones a la derecha */
+    align-items: center;                 /* Centra verticalmente los botones */
+    gap: 13px;                           /* Espacio entre los botones */
+    margin-top: -80px;                    /* Separación desde la barra superior */
+    margin-right: 20px;                  /* Espacio desde el borde derecho */
+}
+
+/* 🍪 Imagen de cada botón */
+.boton {
+    image-rendering: pixelated;  /* se ven nítidos los píxeles */
+    width: 200px;       /* 🔸 Ajusta este valor según el tamaño que desees */
+    height: auto;       /* Mantiene la proporción */
+    transition: transform 0.25s ease, filter 0.25s ease; /* Suaviza el efecto al pasar el mouse */
+}
+
+/* ☕ Efecto visual cuando el cursor pasa encima del botón */
+.boton:hover {
+    transform: scale(1.08);              /* Agranda ligeramente la imagen */
+    filter: drop-shadow(0 0 12px rgba(243, 66, 66, 0.5)); /* Añade una sombra suave */
+}
+
+/* ✨ Animación al aparecer */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 🍩 Animación para cada botón */
+.menu, .somos, .registro, .sesion {
+    animation: aparecer 0.5s ease-out;
+}
+
+/* ⏳ Retrasos para que aparezcan uno tras otro (efecto elegante) */
+.somos { animation-delay: 0.1s; }
+.registro { animation-delay: 0.2s; }
+.sesion { animation-delay: 0.3s; }
+
+/* 🍰 Fondo adicional debajo del principal */
+.fondo-debajo {
+    width: 100%;
+    height: -100vh; /* Ocupa una altura de pantalla */
+    background-image: url("fondo_debajo.png");
+    background-repeat: repeat; /* Modo mosaico */
+    background-size: auto; /* Mantiene el tamaño original */
+    background-position: center;
+}
