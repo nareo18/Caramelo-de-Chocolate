@@ -6,7 +6,7 @@ html, body {
   scroll-behavior: smooth;
 }
 
-/* --- ESTILO DE SECCIONES --- */
+/* --- SECCIONES TIPO DIAPOSITIVA --- */
 section {
   width: 100%;
   height: 100vh;
@@ -23,30 +23,31 @@ section {
 #fondo1 { background-image: url('fondo1.png'); }
 #fondo2 { background-image: url('fondo2.png'); }
 
-/* --- MOSAICO SUPERIOR CON 2 REPETICIONES --- */
+/* --- MOSAICO SUPERIOR (2 REPETICIONES) --- */
 #fondo1::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 84px;
+  height: 140px;
   background-image: url('barra.png');
   background-repeat: repeat-x;
   background-size: 50% 100%;
   z-index: 2;
 }
-/* --- IMAGEN CENTRAL RECTANGULAR SIN DEFORMAR --- */
+
+/* --- IMAGEN CENTRAL RECTANGULAR --- */
 .imagen-centro {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -40%);
-  width: 60%;             /* tamaño relativo (ajustable) */
-  aspect-ratio: 16 / 9;   /* mantiene forma rectangular */
+  transform: translate(-50%, -50%);
+  width: 60%;
+  aspect-ratio: 16 / 9;
   background-image: url('fondo_centro.png');
-  background-repeat: repeat;      /* crea mosaico si la imagen no cubre todo */
-  background-size: contain;       /* mantiene proporciones sin deformar */
+  background-repeat: repeat;
+  background-size: contain;
   background-position: center;
   z-index: 2;
 }
@@ -57,19 +58,20 @@ section {
   top: 140px; /* justo debajo de la barra */
   right: 30px;
   display: flex;
-  gap: 10px; /* espacio entre botones */
+  gap: 10px;
   z-index: 3;
 }
 
 .boton {
-  height: 60px;        /* ajusta al tamaño real de tus imágenes */
+  height: 60px;
   width: auto;
-  cursor: pointer;     /* cambia el cursor al pasar por encima */
-  user-select: none;   /* evita selección accidental */
+  cursor: pointer;
+  user-select: none;
   transition: transform 0.15s ease-in-out;
+  display: block;
 }
 
-/* Pequeño efecto al pasar el mouse (opcional) */
+/* Efecto leve al pasar el mouse (opcional) */
 .boton:hover {
   transform: scale(1.05);
 }

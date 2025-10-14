@@ -3,24 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caramelo de Chocolate</title>
+  <title>Sitio con Botones Enlazados</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <section id="fondo1">
-    <!-- Barra mosaico ya está definida en CSS -->
-    
     <!-- Contenedor de botones -->
     <div class="botones-superior">
+      <!-- Botón sin enlace -->
       <img src="boton_de_menu.png" alt="Menú" class="boton">
-      <img src="boton_de_somos.png" alt="Somos" class="boton">
-      <img src="boton_de_registro.png" alt="Registro" class="boton">
-      <img src="boton_de_sesion.png" alt="Sesión" class="boton">
+
+      <!-- Botones con enlaces -->
+      <a href="https://tusitio.com/somos" target="_blank">
+        <img src="boton_de_somos.png" alt="Somos" class="boton">
+      </a>
+
+      <a href="https://tusitio.com/registro" target="_blank">
+        <img src="boton_de_registro.png" alt="Registro" class="boton">
+      </a>
+
+      <a href="https://tusitio.com/sesion" target="_blank">
+        <img src="boton_de_sesion.png" alt="Sesión" class="boton">
+      </a>
     </div>
 
-    <!-- Imagen central (fondo_centro) -->
+    <!-- Imagen central -->
     <div class="imagen-centro"></div>
-
     <h1>Primera imagen</h1>
   </section>
 
