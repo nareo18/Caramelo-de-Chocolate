@@ -163,14 +163,12 @@ h1 {
   justify-content: center;
 }
 
-/* === Contenedor de tarjetas usando GRID === */
+/* Contenedor de las tarjetas */
 #fondo2 .galeria {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 imágenes por fila */
+  display: flex;
+  justify-content: center;
   gap: 30px;
-  max-width: 900px;
-  width: 100%;
-  margin: 0 auto;
+  flex-wrap: wrap;
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 20px;
   padding: 20px 30px;
@@ -181,7 +179,7 @@ h1 {
   background: white;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  width: 100%; /* ocupa toda su celda del grid */
+  width: 260px;
   text-align: center;
   padding: 15px;
   transition: transform 0.3s ease;
@@ -238,8 +236,23 @@ h1 {
 #fondo2 .botones .agregar:hover {
   background-color: #ff9a00;
 }
+/* ===== Ajuste final para que las 6 imágenes salgan en 2 filas ===== */
+#fondo2 .galeria {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr); /* 3 imágenes por fila */
+  gap: 30px;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  padding: 20px 30px;
+}
 
-/* --- Adaptación para pantallas pequeñas --- */
+/* Cada tarjeta usa todo su espacio dentro de su columna */
+#fondo2 .tarjeta { width: 100%; }
+
+/* Adaptación para pantallas pequeñas */
 @media (max-width: 900px) {
   #fondo2 .galeria { grid-template-columns: repeat(2, 1fr); }
 }
